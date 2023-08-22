@@ -17,7 +17,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   find_package(glfw3 REQUIRED)
 endif()
 
-find_package(glfw3 REQUIRED)
 # Finding OpenGL and set variable OPENGL_INCLUDE_DIR with directory of OpenGL
 find_package(OpenGL REQUIRED)
 

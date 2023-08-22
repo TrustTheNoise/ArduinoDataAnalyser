@@ -11,7 +11,8 @@ add_library(
   imgui_impl_glfw.cpp
   imgui_impl_opengl3.cpp
   imgui_tables.cpp
-  imgui_widgets.cpp)
+  imgui_widgets.cpp
+  SerialPort.cpp)
 
 # Add directory of headers
 target_include_directories(imgui PUBLIC ../headers/)

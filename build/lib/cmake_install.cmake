@@ -1,4 +1,4 @@
-# Install script for directory: C:/Proga/Cpp/TaskImGui/lib
+# Install script for directory: C:/Proga/Cpp/ArduinoDataAnalyser/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

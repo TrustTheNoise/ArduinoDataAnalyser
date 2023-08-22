@@ -1,4 +1,4 @@
-# Install script for directory: C:/Proga/Cpp/TaskImGui/src
+# Install script for directory: C:/Proga/Cpp/ArduinoDataAnalyser/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Proga/Cpp/TaskImGui/build/lib/cmake_install.cmake")
+  include("C:/Proga/Cpp/ArduinoDataAnalyser/build/lib/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Proga/Cpp/TaskImGui/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Proga/Cpp/ArduinoDataAnalyser/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
