@@ -1,9 +1,9 @@
-#include "../headers/App.h"
-#include "../headers/glfw3.h"
-#include "../headers/imgui.h"
+#include "App.h"
+#include "../../ImGui/glfw3.h"
+#include "../../ImGui/imgui.h"
 #include <fstream>
 #include <iostream>
-#include "../headers/SerialPort.hpp"
+#include "../../CoreLibs/SerialPort.hpp"
 #include <cstring>
 
 #define DATA_LENGTH 4096
@@ -18,7 +18,9 @@ bool endsWith(const std::string& str, const char* txt)
                                txt_str.length(), txt_str));
     return false;
 }
-const char *portName = "\\\\.\\COM5";
+
+// Change "COM6" to your arduino port
+const char *portName = "\\\\.\\COM6";
 
 namespace MyApp {
     char output_text[DATA_LENGTH] = "";
@@ -35,7 +37,7 @@ namespace MyApp {
                 int hasRead = arduino->readSerialPort(arduino_data, INPUT_BUF_LENGTH);
                 strcat_s(output_text, arduino_data);
             }else{
-                exit(0);
+            
             }
         }
 

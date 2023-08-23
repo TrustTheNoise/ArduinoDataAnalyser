@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 3.10)
-set(CMAKE_GENERATOR "Ninja")
-
-message("${CMAKE_GENERATOR}")
 
 project(TaskImGui LANGUAGES CXX)
 cmake_policy(SET CMP0072 NEW)
@@ -13,7 +10,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib lib)
 
 # Changing the names for our executing file That is, if you want to change the
 # name, just change the "TemplateImGui" in this line
-set(target_name TemplateImGui)
+set(target_name ArduinoDataAnalyser)
 
 # Creating the actual executable file
 add_executable(${target_name} main.cpp)

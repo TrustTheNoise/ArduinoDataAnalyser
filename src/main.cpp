@@ -55,7 +55,6 @@ int main(int, char**)
         glfwGetWindowSize(window, &openglWidth, &openglHeight);
         ImGui::SetNextWindowSize(ImVec2(openglWidth, openglHeight + 19));
         ImGui::SetNextWindowPos(ImVec2(0.0, -19.0));
-
         // Start my imgui window
         MyApp::RenderUI();
 
