@@ -6,13 +6,8 @@ add_library(
   # Included sources
   imgui.cpp
   imgui_demo.cpp
-  App.cpp
   imgui_draw.cpp
   imgui_impl_glfw.cpp
   imgui_impl_opengl3.cpp
   imgui_tables.cpp
-  imgui_widgets.cpp
-  SerialPort.cpp)
-
-# Add directory of headers
-target_include_directories(imgui PUBLIC ../headers/)
+  imgui_widgets.cpp)

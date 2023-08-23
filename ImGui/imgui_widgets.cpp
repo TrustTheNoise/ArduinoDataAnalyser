@@ -38,9 +38,9 @@ Separator, etc.)
 #define IMGUI_DEFINE_MATH_OPERATORS
 #endif
 
-#include "../headers/imgui.h"
+#include "imgui.h"
 #ifndef IMGUI_DISABLE
-#include "../headers/imgui_internal.h"
+#include "imgui_internal.h"
 
 // System includes
 #include <stdint.h> // intptr_t
@@ -4959,7 +4959,7 @@ namespace ImStb {
 #define STB_TEXTEDIT_K_SHIFT 0x400000
 
 #define STB_TEXTEDIT_IMPLEMENTATION
-#include "../headers/imstb_textedit.h"
+#include "imstb_textedit.h"
 
     // stb_textedit internally allows for a single undo record to do addition
     // and deletion, but somehow, calling the stb_textedit_paste() function

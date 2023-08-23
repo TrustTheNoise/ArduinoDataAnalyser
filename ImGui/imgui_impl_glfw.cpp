@@ -114,9 +114,9 @@
 //  unavailable/missing (instead of -1,-1). 2016-10-15: Misc: Added a void*
 //  user_data parameter to Clipboard function handlers.
 
-#include "../headers/imgui.h"
+#include "imgui.h"
 #ifndef IMGUI_DISABLE
-#include "../headers/imgui_impl_glfw.h"
+#include "imgui_impl_glfw.h"
 
 // Clang warnings with -Weverything
 #if defined(__clang__)
@@ -128,7 +128,7 @@
 #endif
 
 // GLFW
-#include "../headers/glfw3.h"
+#include "glfw3.h"
 
 #ifdef _WIN32
 #undef APIENTRY

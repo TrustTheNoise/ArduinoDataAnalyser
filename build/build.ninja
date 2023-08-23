@@ -34,45 +34,47 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Proga/Cpp/ArduinoDataAnalyser/build/
+cmake_ninja_workdir = /home/nemoved/Proga/Cpp/TemplateImGui/build/
 # =============================================================================
-# Object build statements for EXECUTABLE target TaskImGui
+# Object build statements for EXECUTABLE target TemplateImGui
 
 
 #############################################
-# Order-only phony target for TaskImGui
+# Order-only phony target for TemplateImGui
 
-build cmake_object_order_depends_target_TaskImGui: phony || cmake_object_order_depends_target_imgui
+build cmake_object_order_depends_target_TemplateImGui: phony || cmake_object_order_depends_target_CoreLibs cmake_object_order_depends_target_MyApp cmake_object_order_depends_target_imgui
 
-build CMakeFiles/TaskImGui.dir/main.cpp.obj: CXX_COMPILER__TaskImGui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/src/main.cpp || cmake_object_order_depends_target_TaskImGui
-  DEP_FILE = CMakeFiles\TaskImGui.dir\main.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/src/../headers -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = CMakeFiles\TaskImGui.dir
-  OBJECT_FILE_DIR = CMakeFiles\TaskImGui.dir
+build CMakeFiles/TemplateImGui.dir/main.cpp.o: CXX_COMPILER__TemplateImGui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/src/main.cpp || cmake_object_order_depends_target_TemplateImGui
+  DEP_FILE = CMakeFiles/TemplateImGui.dir/main.cpp.o.d
+  INCLUDES = -I/home/nemoved/Proga/Cpp/TemplateImGui/src/../ImGui -I/home/nemoved/Proga/Cpp/TemplateImGui/src/./lib
+  OBJECT_DIR = CMakeFiles/TemplateImGui.dir
+  OBJECT_FILE_DIR = CMakeFiles/TemplateImGui.dir
+  TARGET_COMPILE_PDB = CMakeFiles/TemplateImGui.dir/
+  TARGET_PDB = TemplateImGui.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TaskImGui
+# Link build statements for EXECUTABLE target TemplateImGui
 
 
 #############################################
-# Link the executable TaskImGui.exe
+# Link the executable TemplateImGui
 
-build TaskImGui.exe: CXX_EXECUTABLE_LINKER__TaskImGui_ CMakeFiles/TaskImGui.dir/main.cpp.obj | lib/libimgui.a C$:/Proga/Cpp/ArduinoDataAnalyser/src/../libglfw3.a || lib/libimgui.a
-  LINK_LIBRARIES = lib/libimgui.a  C:/Proga/Cpp/ArduinoDataAnalyser/src/../libglfw3.a  -lopengl32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\TaskImGui.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = TaskImGui.exe
-  TARGET_IMPLIB = libTaskImGui.dll.a
-  TARGET_PDB = TaskImGui.exe.dbg
+build TemplateImGui: CXX_EXECUTABLE_LINKER__TemplateImGui_ CMakeFiles/TemplateImGui.dir/main.cpp.o | ImGui/libimgui.a lib/libMyApp.a CoreLibs/libCoreLibs.a /usr/lib/libglfw.so.3.3 /usr/lib/libGLX.so /usr/lib/libOpenGL.so || CoreLibs/libCoreLibs.a ImGui/libimgui.a lib/libMyApp.a
+  LINK_LIBRARIES = ImGui/libimgui.a  lib/libMyApp.a  CoreLibs/libCoreLibs.a  /usr/lib/libglfw.so.3.3  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so
+  OBJECT_DIR = CMakeFiles/TemplateImGui.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/TemplateImGui.dir/
+  TARGET_FILE = TemplateImGui
+  TARGET_PDB = TemplateImGui.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Proga\Cpp\ArduinoDataAnalyser\build && "C:\Program Files\CMake\bin\cmake-gui.exe" -SC:\Proga\Cpp\ArduinoDataAnalyser\src -BC:\Proga\Cpp\ArduinoDataAnalyser\build"
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build && /usr/bin/ccmake -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -84,7 +86,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Proga\Cpp\ArduinoDataAnalyser\build && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Proga\Cpp\ArduinoDataAnalyser\src -BC:\Proga\Cpp\ArduinoDataAnalyser\build"
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build && /usr/bin/cmake --regenerate-during-build -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -93,7 +95,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Proga/Cpp/ArduinoDataAnalyser/src/CMakeLists.txt
+# /home/nemoved/Proga/Cpp/TemplateImGui/src/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -103,61 +105,56 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for imgui
 
-build cmake_object_order_depends_target_imgui: phony || lib/CMakeFiles/imgui.dir
+build cmake_object_order_depends_target_imgui: phony || ImGui/CMakeFiles/imgui.dir
 
-build lib/CMakeFiles/imgui.dir/imgui.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/imgui.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\imgui.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
+build ImGui/CMakeFiles/imgui.dir/imgui.cpp.o: CXX_COMPILER__imgui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/imgui.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = ImGui/CMakeFiles/imgui.dir/imgui.cpp.o.d
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  OBJECT_FILE_DIR = ImGui/CMakeFiles/imgui.dir
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_PDB = ImGui/libimgui.pdb
 
-build lib/CMakeFiles/imgui.dir/imgui_demo.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/imgui_demo.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\imgui_demo.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
+build ImGui/CMakeFiles/imgui.dir/imgui_demo.cpp.o: CXX_COMPILER__imgui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = ImGui/CMakeFiles/imgui.dir/imgui_demo.cpp.o.d
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  OBJECT_FILE_DIR = ImGui/CMakeFiles/imgui.dir
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_PDB = ImGui/libimgui.pdb
 
-build lib/CMakeFiles/imgui.dir/App.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/App.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\App.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
+build ImGui/CMakeFiles/imgui.dir/imgui_draw.cpp.o: CXX_COMPILER__imgui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = ImGui/CMakeFiles/imgui.dir/imgui_draw.cpp.o.d
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  OBJECT_FILE_DIR = ImGui/CMakeFiles/imgui.dir
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_PDB = ImGui/libimgui.pdb
 
-build lib/CMakeFiles/imgui.dir/imgui_draw.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/imgui_draw.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\imgui_draw.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
+build ImGui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.o: CXX_COMPILER__imgui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/imgui_impl_glfw.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = ImGui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.o.d
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  OBJECT_FILE_DIR = ImGui/CMakeFiles/imgui.dir
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_PDB = ImGui/libimgui.pdb
 
-build lib/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/imgui_impl_glfw.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\imgui_impl_glfw.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
+build ImGui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o: CXX_COMPILER__imgui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = ImGui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o.d
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  OBJECT_FILE_DIR = ImGui/CMakeFiles/imgui.dir
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_PDB = ImGui/libimgui.pdb
 
-build lib/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\imgui_impl_opengl3.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
+build ImGui/CMakeFiles/imgui.dir/imgui_tables.cpp.o: CXX_COMPILER__imgui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = ImGui/CMakeFiles/imgui.dir/imgui_tables.cpp.o.d
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  OBJECT_FILE_DIR = ImGui/CMakeFiles/imgui.dir
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_PDB = ImGui/libimgui.pdb
 
-build lib/CMakeFiles/imgui.dir/imgui_tables.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/imgui_tables.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\imgui_tables.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
-
-build lib/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\imgui_widgets.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
-
-build lib/CMakeFiles/imgui.dir/SerialPort.cpp.obj: CXX_COMPILER__imgui_unscanned_ C$:/Proga/Cpp/ArduinoDataAnalyser/lib/SerialPort.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = lib\CMakeFiles\imgui.dir\SerialPort.cpp.obj.d
-  INCLUDES = -IC:/Proga/Cpp/ArduinoDataAnalyser/lib/../headers
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  OBJECT_FILE_DIR = lib\CMakeFiles\imgui.dir
+build ImGui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o: CXX_COMPILER__imgui_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = ImGui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o.d
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  OBJECT_FILE_DIR = ImGui/CMakeFiles/imgui.dir
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_PDB = ImGui/libimgui.pdb
 
 
 # =============================================================================
@@ -165,21 +162,144 @@ build lib/CMakeFiles/imgui.dir/SerialPort.cpp.obj: CXX_COMPILER__imgui_unscanned
 
 
 #############################################
-# Link the static library lib\libimgui.a
+# Link the static library ImGui/libimgui.a
 
-build lib/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_ lib/CMakeFiles/imgui.dir/imgui.cpp.obj lib/CMakeFiles/imgui.dir/imgui_demo.cpp.obj lib/CMakeFiles/imgui.dir/App.cpp.obj lib/CMakeFiles/imgui.dir/imgui_draw.cpp.obj lib/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.obj lib/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj lib/CMakeFiles/imgui.dir/imgui_tables.cpp.obj lib/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj lib/CMakeFiles/imgui.dir/SerialPort.cpp.obj
-  OBJECT_DIR = lib\CMakeFiles\imgui.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = lib\libimgui.a
-  TARGET_PDB = imgui.a.dbg
+build ImGui/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_ ImGui/CMakeFiles/imgui.dir/imgui.cpp.o ImGui/CMakeFiles/imgui.dir/imgui_demo.cpp.o ImGui/CMakeFiles/imgui.dir/imgui_draw.cpp.o ImGui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.o ImGui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o ImGui/CMakeFiles/imgui.dir/imgui_tables.cpp.o ImGui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o
+  OBJECT_DIR = ImGui/CMakeFiles/imgui.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = ImGui/CMakeFiles/imgui.dir/imgui.pdb
+  TARGET_FILE = ImGui/libimgui.a
+  TARGET_PDB = ImGui/libimgui.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build ImGui/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build/ImGui && /usr/bin/ccmake -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build ImGui/edit_cache: phony ImGui/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build ImGui/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build/ImGui && /usr/bin/cmake --regenerate-during-build -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build ImGui/rebuild_cache: phony ImGui/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/nemoved/Proga/Cpp/TemplateImGui/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target CoreLibs
+
+
+#############################################
+# Order-only phony target for CoreLibs
+
+build cmake_object_order_depends_target_CoreLibs: phony || CoreLibs/CMakeFiles/CoreLibs.dir
+
+build CoreLibs/CMakeFiles/CoreLibs.dir/SerialPort.cpp.o: CXX_COMPILER__CoreLibs_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/CoreLibs/SerialPort.cpp || cmake_object_order_depends_target_CoreLibs
+  DEP_FILE = CoreLibs/CMakeFiles/CoreLibs.dir/SerialPort.cpp.o.d
+  OBJECT_DIR = CoreLibs/CMakeFiles/CoreLibs.dir
+  OBJECT_FILE_DIR = CoreLibs/CMakeFiles/CoreLibs.dir
+  TARGET_COMPILE_PDB = CoreLibs/CMakeFiles/CoreLibs.dir/CoreLibs.pdb
+  TARGET_PDB = CoreLibs/libCoreLibs.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target CoreLibs
+
+
+#############################################
+# Link the static library CoreLibs/libCoreLibs.a
+
+build CoreLibs/libCoreLibs.a: CXX_STATIC_LIBRARY_LINKER__CoreLibs_ CoreLibs/CMakeFiles/CoreLibs.dir/SerialPort.cpp.o
+  OBJECT_DIR = CoreLibs/CMakeFiles/CoreLibs.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CoreLibs/CMakeFiles/CoreLibs.dir/CoreLibs.pdb
+  TARGET_FILE = CoreLibs/libCoreLibs.a
+  TARGET_PDB = CoreLibs/libCoreLibs.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build CoreLibs/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build/CoreLibs && /usr/bin/ccmake -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build CoreLibs/edit_cache: phony CoreLibs/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CoreLibs/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build/CoreLibs && /usr/bin/cmake --regenerate-during-build -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build CoreLibs/rebuild_cache: phony CoreLibs/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/nemoved/Proga/Cpp/TemplateImGui/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target MyApp
+
+
+#############################################
+# Order-only phony target for MyApp
+
+build cmake_object_order_depends_target_MyApp: phony || lib/CMakeFiles/MyApp.dir
+
+build lib/CMakeFiles/MyApp.dir/App.cpp.o: CXX_COMPILER__MyApp_unscanned_ /home/nemoved/Proga/Cpp/TemplateImGui/src/lib/App.cpp || cmake_object_order_depends_target_MyApp
+  DEP_FILE = lib/CMakeFiles/MyApp.dir/App.cpp.o.d
+  OBJECT_DIR = lib/CMakeFiles/MyApp.dir
+  OBJECT_FILE_DIR = lib/CMakeFiles/MyApp.dir
+  TARGET_COMPILE_PDB = lib/CMakeFiles/MyApp.dir/MyApp.pdb
+  TARGET_PDB = lib/libMyApp.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target MyApp
+
+
+#############################################
+# Link the static library lib/libMyApp.a
+
+build lib/libMyApp.a: CXX_STATIC_LIBRARY_LINKER__MyApp_ lib/CMakeFiles/MyApp.dir/App.cpp.o
+  OBJECT_DIR = lib/CMakeFiles/MyApp.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = lib/CMakeFiles/MyApp.dir/MyApp.pdb
+  TARGET_FILE = lib/libMyApp.a
+  TARGET_PDB = lib/libMyApp.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Proga\Cpp\ArduinoDataAnalyser\build\lib && "C:\Program Files\CMake\bin\cmake-gui.exe" -SC:\Proga\Cpp\ArduinoDataAnalyser\src -BC:\Proga\Cpp\ArduinoDataAnalyser\build"
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build/lib && /usr/bin/ccmake -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -191,7 +311,7 @@ build lib/edit_cache: phony lib/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Proga\Cpp\ArduinoDataAnalyser\build\lib && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Proga\Cpp\ArduinoDataAnalyser\src -BC:\Proga\Cpp\ArduinoDataAnalyser\build"
+  COMMAND = cd /home/nemoved/Proga/Cpp/TemplateImGui/build/lib && /usr/bin/cmake --regenerate-during-build -S/home/nemoved/Proga/Cpp/TemplateImGui/src -B/home/nemoved/Proga/Cpp/TemplateImGui/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -201,11 +321,17 @@ build lib/rebuild_cache: phony lib/CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build TaskImGui: phony TaskImGui.exe
+build CoreLibs: phony CoreLibs/libCoreLibs.a
 
-build imgui: phony lib/libimgui.a
+build MyApp: phony lib/libMyApp.a
 
-build libimgui.a: phony lib/libimgui.a
+build imgui: phony ImGui/libimgui.a
+
+build libCoreLibs.a: phony CoreLibs/libCoreLibs.a
+
+build libMyApp.a: phony lib/libMyApp.a
+
+build libimgui.a: phony ImGui/libimgui.a
 
 # =============================================================================
 # Folder targets.
@@ -213,21 +339,30 @@ build libimgui.a: phony lib/libimgui.a
 # =============================================================================
 
 #############################################
-# Folder: C:/Proga/Cpp/ArduinoDataAnalyser/build
+# Folder: /home/nemoved/Proga/Cpp/TemplateImGui/build
 
-build all: phony TaskImGui.exe lib/all
+build all: phony TemplateImGui ImGui/all CoreLibs/all lib/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Proga/Cpp/ArduinoDataAnalyser/build/lib
+# Folder: /home/nemoved/Proga/Cpp/TemplateImGui/build/CoreLibs
 
-build lib/all: phony lib/libimgui.a
+build CoreLibs/all: phony CoreLibs/libCoreLibs.a
 
 # =============================================================================
-# Unknown Build Time Dependencies.
-# Tell Ninja that they may appear as side effects of build rules
-# otherwise ordered by order-only dependencies.
+
+#############################################
+# Folder: /home/nemoved/Proga/Cpp/TemplateImGui/build/ImGui
+
+build ImGui/all: phony ImGui/libimgui.a
+
+# =============================================================================
+
+#############################################
+# Folder: /home/nemoved/Proga/Cpp/TemplateImGui/build/lib
+
+build lib/all: phony lib/libMyApp.a
 
 # =============================================================================
 # Built-in targets
@@ -236,14 +371,14 @@ build lib/all: phony lib/libimgui.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Proga/Cpp/ArduinoDataAnalyser/lib/CMakeLists.txt C$:/Proga/Cpp/ArduinoDataAnalyser/src/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/FindOpenGL.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.27.3/CMakeCXXCompiler.cmake CMakeFiles/3.27.3/CMakeRCCompiler.cmake CMakeFiles/3.27.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/nemoved/Proga/Cpp/TemplateImGui/CoreLibs/CMakeLists.txt /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/CMakeLists.txt /home/nemoved/Proga/Cpp/TemplateImGui/src/CMakeLists.txt /home/nemoved/Proga/Cpp/TemplateImGui/src/lib/CMakeLists.txt /usr/lib/cmake/glfw3/glfw3Config.cmake /usr/lib/cmake/glfw3/glfw3ConfigVersion.cmake /usr/lib/cmake/glfw3/glfw3Targets-noconfig.cmake /usr/lib/cmake/glfw3/glfw3Targets.cmake /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake/Modules/CMakeSystem.cmake.in /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/FindOpenGL.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.1/CMakeCXXCompiler.cmake CMakeFiles/3.27.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Proga/Cpp/ArduinoDataAnalyser/lib/CMakeLists.txt C$:/Proga/Cpp/ArduinoDataAnalyser/src/CMakeLists.txt C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/FindOpenGL.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.27.3/CMakeCXXCompiler.cmake CMakeFiles/3.27.3/CMakeRCCompiler.cmake CMakeFiles/3.27.3/CMakeSystem.cmake: phony
+build /home/nemoved/Proga/Cpp/TemplateImGui/CoreLibs/CMakeLists.txt /home/nemoved/Proga/Cpp/TemplateImGui/ImGui/CMakeLists.txt /home/nemoved/Proga/Cpp/TemplateImGui/src/CMakeLists.txt /home/nemoved/Proga/Cpp/TemplateImGui/src/lib/CMakeLists.txt /usr/lib/cmake/glfw3/glfw3Config.cmake /usr/lib/cmake/glfw3/glfw3ConfigVersion.cmake /usr/lib/cmake/glfw3/glfw3Targets-noconfig.cmake /usr/lib/cmake/glfw3/glfw3Targets.cmake /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake/Modules/CMakeSystem.cmake.in /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/FindOpenGL.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.27.1/CMakeCXXCompiler.cmake CMakeFiles/3.27.1/CMakeSystem.cmake: phony
 
 
 #############################################

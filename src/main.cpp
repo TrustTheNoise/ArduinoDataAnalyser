@@ -1,8 +1,8 @@
-#include "../headers/App.h"
-#include "../headers/glfw3.h"
-#include "../headers/imgui.h"
-#include "../headers/imgui_impl_glfw.h"
-#include "../headers/imgui_impl_opengl3.h"
+#include "../ImGui/glfw3.h"
+#include "../ImGui/imgui.h"
+#include "../ImGui/imgui_impl_glfw.h"
+#include "../ImGui/imgui_impl_opengl3.h"
+#include "./lib/App.h"
 #include <iostream>
 
 int main(int, char**)

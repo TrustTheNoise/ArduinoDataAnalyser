@@ -1,4 +1,4 @@
-# Install script for directory: /home/nemoved/Proga/Cpp/TemplateImGui/src/lib
+# Install script for directory: /home/nemoved/Proga/Cpp/TemplateImGui/ImGui
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
